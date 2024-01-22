@@ -21,9 +21,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Set Adapter(Konsep sama dg set adapter pda RecylerView)
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
+
+        //Menghubungkan ViewPager2 dg TabLayout Memakai TabLayoutMediator
         val tabs: TabLayout = findViewById(R.id.tabs)
         TabLayoutMediator(tabs, viewPager){ tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])

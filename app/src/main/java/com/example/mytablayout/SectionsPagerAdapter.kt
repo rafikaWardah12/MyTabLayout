@@ -9,6 +9,7 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
         return 2
     }
 
+    //Create per Fragment(CARA 1)
     override fun createFragment(position: Int): Fragment {
         var fragment: Fragment? = null
         when (position) {
@@ -17,5 +18,8 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
         }
         return fragment as Fragment
     }
+
+    //Study case: Misal dibutuhkan 20 tampilan fragment CARA 1 akan membebani memori
+    //Membuat Tab Layout Dengan 1 Fragment
 
 }
