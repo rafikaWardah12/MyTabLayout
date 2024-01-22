@@ -1,11 +1,15 @@
 package com.example.mytablayout
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
+    //Mengirim data dari Activity ke Fragment
+    var appName: String = ""
+
     override fun getItemCount(): Int {
         return 3
     }
@@ -24,6 +28,8 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
         fragment.arguments = Bundle().apply {
             //mapping(Key, Value)
             putInt(HomeFragment.ARG_SECTION_NUMBER, position + 1)
+            //Mengirim data dari Activity ke Fragment
+            putString(HomeFragment.ARG_NAME, appName)
         }
         return fragment
     }

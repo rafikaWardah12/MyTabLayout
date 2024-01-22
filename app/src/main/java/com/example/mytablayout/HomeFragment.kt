@@ -11,6 +11,7 @@ class HomeFragment : Fragment() {
 
     companion object{
         const val ARG_SECTION_NUMBER = "section_number"
+        const val ARG_NAME = "app_name"
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +28,10 @@ class HomeFragment : Fragment() {
 
         //Mendapatlan data yg dikrimkan dri SectionPagerAdapter dg bundle, mapping
         val index = arguments?.getInt(ARG_SECTION_NUMBER, 0)
-
         tvLabel.text = getString(R.string.content_tab_text, index)
+
+        //
+        val name = arguments?.getString(ARG_NAME)
     }
 
 

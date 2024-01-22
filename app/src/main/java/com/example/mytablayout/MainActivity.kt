@@ -27,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
 
+        //Mengirim data dari Activity ke Fragment
+        sectionsPagerAdapter.appName = resources.getString(R.string.app_name)
+
         //Menghubungkan ViewPager2 dg TabLayout Memakai TabLayoutMediator
         val tabs: TabLayout = findViewById(R.id.tabs)
         TabLayoutMediator(tabs, viewPager){ tab, position ->
@@ -34,5 +37,7 @@ class MainActivity : AppCompatActivity() {
         }.attach()
 
         supportActionBar?.elevation = 0f
+
+
     }
 }
