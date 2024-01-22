@@ -24,6 +24,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val tvLabel: TextView = view.findViewById(R.id.section_label)
+
+        //Mendapatlan data yg dikrimkan dri SectionPagerAdapter dg bundle, mapping
         val index = arguments?.getInt(ARG_SECTION_NUMBER, 0)
 
         tvLabel.text = getString(R.string.content_tab_text, index)

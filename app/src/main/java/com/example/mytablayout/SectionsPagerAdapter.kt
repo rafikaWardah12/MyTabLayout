@@ -10,6 +10,24 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
         return 3
     }
 
+    //Study case: Misal dibutuhkan 20 tampilan fragment CARA 1 akan membebani memori
+    //MEMBUAT TAB LAYOUT DG 1 FRAGMENT
+    //Dipakai ketika data&layout yg akan ditampilkan mirip antar tab
+    //Jadi, pda CARA 1 ad 2 fragment. CARA 2 hnya ada HomeFragment()
+    //Sistematika = hnya replace text melalui companion object(Main Activity) berdasarkan posisi
+    //Alasan diberi +1: position dimulai dri 0
+    //Urutan Tab Dimulai dari nilai 1
+    override fun createFragment(position: Int): Fragment {
+        val fragment = HomeFragment()
+
+        //Mengirim data bundle ke fragment
+        fragment.arguments = Bundle().apply {
+            //mapping(Key, Value)
+            putInt(HomeFragment.ARG_SECTION_NUMBER, position + 1)
+        }
+        return fragment
+    }
+
     //Create per Fragment(CARA 1)
     //Dipakai saat layout yg ditmpilkan sangat berbeda
 //    override fun createFragment(position: Int): Fragment {
@@ -20,21 +38,5 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
 //        }
 //        return fragment as Fragment
 //    }
-
-    //Study case: Misal dibutuhkan 20 tampilan fragment CARA 1 akan membebani memori
-    //Membuat Tab Layout Dengan 1 Fragment
-    //Dipakai ketika data&layout yg akan ditampilkan mirip antar tab
-    //Jadi, pda CARA 1 ad 2 fragment. CARA 2 hnya ada HomeFragment()
-    //Sistematika = hnya replace text melalui companion object(Main Activity) berdasarkan posisi
-    //Alasan diberi +1: position dimulai dri 0
-    //Urutan Tab Dimulai dari nilai 1
-    override fun createFragment(position: Int): Fragment {
-        val fragment = HomeFragment()
-        fragment.arguments = Bundle().apply {
-            //mapping(Key, Value)
-            putInt(HomeFragment.ARG_SECTION_NUMBER, position + 1)
-        }
-        return fragment
-    }
 
 }
