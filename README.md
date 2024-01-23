@@ -1,5 +1,5 @@
 # MyTabLayout
-MyTabLayout merupakan project sederhana yang membuat Tab Layout dengan ViewPager2. Selain itu juga menerapkan implementasi tab layout dengan banyak fragment dan juga membuat tab layout yang efisien apabila di dalam project mempunyai layout yang sama dan penggunaan data yang hampir sama dalam setiap fragmentnya. Atau biasa dikenal dengan Tab Layout with 1 Fragment
+MyTabLayout merupakan project sederhana yang membuat Tab Layout dengan ViewPager2. Selain itu juga menerapkan implementasi tab layout dengan banyak fragment. Membuat tab layout yang efisien apabila di dalam project mempunyai layout yang sama dan penggunaan data yang hampir sama dalam setiap fragmentnya. Atau biasa dikenal dengan Tab Layout with 1 Fragment
 
 ## Implementasi
 1. Membuat komponen TabLayout dan ViewPager2 pada layout
